@@ -1,0 +1,27 @@
+.header
+{
+    height:96px;
+}
+
+.logo img
+{
+    width:256px;
+    height:96px;
+}
+
+.logo
+{
+    bottom:30px;
+}
+
+.pannel
+{
+    max-width: 800px;
+    margin: 0;
+    padding:24px;
+}
+
+.header-item
+{
+    font-size: 150%;
+}

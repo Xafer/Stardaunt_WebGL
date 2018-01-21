@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stardaunt</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/small.css" media="screen and (min-device-width: 1px) and (max-device-width: 480px)">
+    <link rel="stylesheet" href="css/large.css" media="screen and (min-device-width: 481px)">
+    
+</head>
+
+<body>
+  <div class="header">
+      <div class="pannel" >
+          <div class="logo"><a href="{{domain}}"><img src="res/img/logo.png" alt="logo"></a></div>
+          <div class="menu">
+             <div class="header-item"><a href="{{domain}}">Home</a></div>
+             <div class="header-item"><a href="{{domain}}">About</a></div>
+             <div class="header-item"><a href="{{domain}}">Lorem</a></div>
+             <div class="header-item"><a href="{{domain}}">Ipsum</a></div>
+          </div>
+      </div>
+  </div>
+  <div class="section">
+      <div class="pannel slider">
+         <div class="sliderPointer"></div>
+         <div id="slide1" class="slide" style="background-image: url(res/img/sl1.gif)">
+             <div class="sleft"></div>
+             <div class="sright"></div>
+             <div class="slideBottomBar"><a href="{{slide1}}">Consectetur</a></div>
+             <div class="slideOverlay"></div>
+         </div> 
+         <div class="slide">
+             <div class="sleft"></div>
+             <div class="sright"></div>
+             <div class="slideOverlay"></div>
+             <div class="slideBottomBar">dolor sit</div>
+         </div>
+      </div>
+  </div>
+  <div class="section">
+      <div class="pannel "></div>
+  </div>
+</body>
+
+<script id="vspost" type="notjs">
+  attribute vec3 a_position;
+  varying highp vec2 v_texCoord;
+  uniform int u_time;
+  
+  void main() {
+    v_texCoord.xy = a_position.xy/2.0 + vec2(0.5,0.5);
+    gl_Position = vec4(a_position.xy,0,1);
+  }
+</script>
+ 
+<script id="fspost" type="notjs">
+  precision mediump float;
+  uniform sampler2D u_tex0;
+  varying highp vec2 v_texCoord;
+  
+  void main() {
+    gl_FragColor = texture2D(u_tex0,v_texCoord);
+  }
+</script>
+
+<script id="vsmodel" type="notjs">
+  attribute vec3 a_position;
+  uniform mat4 u_view;
+  uniform mat4 u_proj;
+  uniform int u_time;
+  
+  varying vec4 v_col;
+  
+  void main() {
+    v_col = vec4(a_position.xyz/20.0 + vec3(0.5),1);
+    vec3 offset = vec3(13.0,0,-20.0);
+    gl_Position = vec4(a_position.xyz+offset,1)*u_proj;
+  }
+ 
+</script>
+ 
+<script id="fsmodel" type="notjs">
+  precision mediump float;
+  
+  varying vec4 v_col;
+  
+  void main() {
+    gl_FragColor = v_col; // return redish-purple
+  }
+ 
+</script>
+
+<script src="js/glutils.js"></script>
+<script src="js/webgl.js"></script>
+<script src="js/main.js"></script>
+</html>

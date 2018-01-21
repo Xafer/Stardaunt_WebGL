@@ -1,0 +1,170 @@
+/*
+    color a = #79b193
+*/
+
+*, * *
+{
+    color: #abea99;
+    font-family: "Courier New", Courier, monospace;
+    text-decoration: none;
+}
+
+html, body
+{
+    height:100%;
+}
+
+body
+{
+    background-color:#f0f0f0;
+}
+
+.pannel
+{
+    display:block;
+    max-width:800px;
+    margin:auto;
+}
+
+.section
+{
+    margin: 32px 0;
+}
+
+canvas
+{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    //background-color:#f0f0f0;
+    width:100%;
+    height:100%;
+    z-index: -1;
+}
+
+/*  HEADER */
+
+.header
+{
+    margin: 32px 0;
+    height: 48px;
+    background-color:#79b193;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo
+{
+    position:relative;
+    bottom:6px;
+    float:left;
+    margin-right:32px;
+}
+
+.menu
+{
+    display:inline-block;
+}
+
+.header-item
+{
+    min-width:32px;
+    display:inline-block;
+    padding:6px;
+    padding-top: 24px;
+}
+
+.header-item a
+{
+    font-family:  "Courier New", Courier, monospace;
+    font-style: bold;
+    line-height: 0px;
+    font-size: 24px;
+}
+
+.header-item a:hover
+{
+    color: #ddffdd;
+    text-decoration: underline;
+}
+
+/*SLIDER*/
+
+.slider
+{
+    overflow: hidden;
+    height:222px;
+    border: solid 1px #576c8d;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    display:none;
+}
+
+.slide
+{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    float:left;
+    position:relative;
+    overflow: hidden;
+}
+
+.slide .sleft, .slide .sright
+{
+    display:block;
+    width:48px;
+    height:220px;
+    position:absolute;
+    cursor:pointer;
+    z-index:0;
+}
+
+.slide .sleft:hover, .slide .sright:hover
+{
+    
+    background-color:rgba(255,255,255,0.2);
+}
+
+.slide .sright
+{
+    right:0px;
+    background: linear-gradient(-90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.0));
+}
+
+.slide .sleft
+{
+    background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.0));
+}
+
+.slideOverlay
+{
+    display:block;
+    width:100%;
+    height:154px;
+    background-color: rgba(180,210,200,0.5);
+}
+
+.slideBottomBar
+{
+    height: 66px;
+    background-color: rgba(50,100,90,0.5);
+    z-index:2;
+    padding: 3px 56px;
+}
+
+.slideBottomBar a
+{
+    font-family: "Courier New", Courier, monospace;
+    font-size: 200%;
+    width:100%;
+    display:none;
+}
+
+.slideBottomBar a:hover
+{
+    color: #ddffdd;
+}
+
+/*CONTENT*/
